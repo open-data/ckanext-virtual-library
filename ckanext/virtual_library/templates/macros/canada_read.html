@@ -1,0 +1,259 @@
+{# vim: set filetype=jinja sw=2 sts=2: #}
+
+{#
+Render the field value for the given dataset or resource field object
+and client language, either from a language-specific field value or by
+splitting the value on '|' for single-choice options.
+
+Doesn't handle tag values, for those see tag_field and tag_vocab_field
+below.
+#}
+{%- macro field(f, pkg, client_lang) -%}
+  {%- if f.bilingual -%}
+    {% if client_lang == 'fr' -%}
+      {{- pkg[f.id + '_fra'] -}}
+    {%- else -%}
+      {{- pkg[f.id] -}}
+    {%- endif -%}
+  {%- else -%}
+    {%- if pkg[f.id] != None and ' | ' in pkg[f.id] -%}
+      {{- pkg[f.id].split(' | ')[1 if client_lang == 'fr' else 0] -}}
+    {%- else -%}
+      {{- pkg[f.id] -}}
+    {%- endif -%}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#
+Strip any time from the date passed, returning only YYYY-MM-DD
+#}
+{%- macro date_format(d) -%}
+  {%- if d and ' ' in d -%}
+    {{- d.split(' ')[0] -}}
+  {%- else -%}
+    {{- d -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+{%- macro date_field(f, pkg) -%}
+  {{- date_format(pkg[f.id]) -}}
+{%- endmacro -%}
+
+{%- macro url_field(f, pkg) -%}
+  <a href="{{- pkg[f.id] -}}">{{- pkg[f.id] -}}</a>
+{%- endmacro -%}
+
+{#
+Render the field value for a given dataset field id
+#}
+{%- macro field_id(id, pkg, client_lang) -%}
+  {{- field(schema_description.dataset_field_by_id[id], pkg, client_lang) -}}
+{%- endmacro -%}
+
+{#
+'en' -> 'eng'; 'fr' -> 'fra'
+#}
+{%- macro full_lang(client_lang) -%}
+  {{- 'fra' if client_lang == 'fr' else 'eng' -}}
+{%- endmacro -%}
+
+{#
+Render the field label for the given field object and client language
+#}
+{%- macro field_label(f, client_lang) -%}
+  {{- f.label[full_lang(client_lang)] -}}
+{%- endmacro -%}
+
+{#
+Render a list of keywords for the client language
+#}
+{%- macro keyword_field(f, pkg, client_lang) -%}
+  <ul class='list-inline'>
+    {% set tags = pkg.get(
+      f.id + ('_fra' if client_lang == 'fr' else ''), '') -%}
+    {%- for tag in tags.split(',') -%}
+      <li>
+        <a class="btn btn-default btn-xs mrgn-bttm-sm mrgn-rght-sm" href="
+          {%- if client_lang == 'fr' -%}
+            {%- url_for controller='package', action='search',
+              keywords_fra=tag.strip() -%}
+          {%- else -%}
+            {%- url_for controller='package', action='search',
+              keywords=tag.strip() -%}
+          {%- endif -%}
+          " title="{{ _('Keyword') ~ ' ' ~ tag.strip() }}">{{ tag.strip() }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endmacro -%}
+
+{%- macro subject_field(f, pkg, client_lang) -%}
+  <ul class='list-inline'>
+    {%- for tag in pkg[f.id] -%}
+      <li>
+        {% set s = tag.split('  ')[1 if client_lang == 'fr' else 0] %}
+        <a class="btn btn-default btn-xs mrgn-bttm-sm mrgn-rght-sm" href="
+        {%- url_for controller='package', action='search', subject=tag.strip() -%}
+        " title="{{ _('Subject') ~ ' ' ~ s.strip() }}">{{ s.strip() }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endmacro -%}
+
+{#
+Render a list of tag vocabulary tags for given field object and client
+language
+#}
+{%- macro tag_vocab_field(f, pkg, client_lang) -%}
+  <ul class='menu-horizontal margin-top-none margin-bottom-none'>
+    {%- for tag in pkg[f.id] -%}
+      <li>
+          <code>{{ tag.split('  ')[1 if client_lang == 'fr' else 0] }}</code>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endmacro -%}
+
+{#
+Render the organization name
+#}
+{%- macro org_field(pkg, client_lang) -%}
+  {%- set org = pkg.organization.title -%}
+  {%- if org != None and ' | ' in org -%}
+    {{- org.split(' | ')[1 if client_lang == 'fr' else 0] -}}
+  {%- else -%}
+    {{- org -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#
+Render a choice field where the choice['key'] is the value stored
+#}
+{%- macro lookup_field(f, pkg, client_lang) -%}
+  {%- if pkg[f.id] -%}
+    {%- if f.choices_by_key.get(pkg[f.id]) -%}
+      {{- f.choices_by_key[pkg[f.id]][full_lang(client_lang)] -}}
+    {% else %}
+      {{ split_bilingual_field(pkg[f.id], client_lang) }}
+    {% endif %}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#
+Display a resource format in the correct language
+#}
+
+{%- macro resource_format(format, client_lang) -%}
+  {%- set format_field = schema_description.resource_field_by_id.format -%}
+  {%- if format in format_field.choices_by_key -%}
+    {{- format_field.choices_by_key[format][full_lang(client_lang)] -}}
+  {%- else -%}
+    {{- format -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#
+Display the catalog type in the correct language
+#}
+
+{%- macro catalog_type(type, client_lang) -%}
+  {%- set type_field = schema_description.dataset_field_by_id.catalog_type -%}
+  {%- if type in type_field.choices_by_key -%}
+    {{- type_field.choices_by_key[type][full_lang(client_lang)] -}}
+  {%- else -%}
+    {{- format -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+
+{#
+Display a license name in the correct language
+#}
+{%- macro license_name(license_id, client_lang) -%}
+  {%- set license_field = schema_description.dataset_field_by_id.license_id -%}
+  {%- if license_id in license_field.choices_by_key -%}
+    {{- license_field.choices_by_key[license_id][full_lang(client_lang)] -}}
+  {%- else -%}
+    {{- license_id -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#
+Choose the most appropriate display name for a resource
+#}
+{%- macro resource_display_name(res, client_lang) -%}
+  {%- set name = res.name_fra if client_lang == 'fr' else res.name -%}
+  {%- if name -%}
+    {{- name -}}
+  {%- else -%}
+    {{- res.url -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#
+Split a bilingual field separated by a pipe
+#}
+{%- macro split_bilingual_field(field_text, client_lang) -%}
+  {%- if field_text != None and ' | ' in field_text -%}
+    {{- field_text.split(' | ')[1 if client_lang == 'fr' else 0] -}}
+  {%- else -%}
+    {{- field_text -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+
+{#
+Split a subject or topic category field, which are separated by a double space
+#}
+{%- macro split_subject_field(field_text, client_lang) -%}
+  {%- if field_text != None and '  ' in field_text -%}
+    {{- field_text.split('  ')[1 if client_lang == 'fr' else 0] -}}
+  {%- else -%}
+    {{- field_text -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#
+Render a boolean field with a friendly WET checkmark or X
+#}
+{%- macro bool_field(f, pkg) -%}
+  {%- if pkg[f.id] -%}
+    <span class="wb-icon-tick"></span>
+  {%- else -%}
+    <span class="wb-icon-x"></span>
+  {%- endif -%}
+{%- endmacro -%}
+
+{#
+Render a file download size field with 'O' or 'B' appended for Octets/Bytes
+#}
+{%- macro size_field(f, pkg, client_lang) -%}
+  {% set suffix = 'O' if client_lang == 'fr' else 'B' %}
+
+  {%- if pkg[f.id] -%}
+    {{pkg[f.id]}} {{suffix}}
+  {%- else -%}
+    0 {{suffix}}
+  {%- endif -%}
+{%- endmacro -%}
+
+
+{# 
+Search Facet Formatters 
+#}
+
+{%- macro res_label(format, lang) -%}
+  {{- resource_format(format.name, lang) -}}
+{%- endmacro -%}
+
+{%- macro subject_label(subject, lang) -%}
+  {{- split_subject_field(subject.name, lang) -}}
+{%- endmacro -%}
+
+{%- macro catalog_label(catalog, lang) -%}
+  {{- catalog_type(catalog.name, lang) -}}
+{%- endmacro -%}
+
+{%- macro license_lookup(license, lang) -%}
+  {{- license_name(license.name, lang) -}}
+{%- endmacro -%}

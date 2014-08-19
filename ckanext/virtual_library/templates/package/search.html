@@ -1,0 +1,81 @@
+{# vim: set filetype=jinja sw=2 sts=2: #}
+{% ckan_extends %}
+{% import 'macros/canada_read.html' as cr %}
+
+{%- block api_access_info -%}
+  <!-- We want this block to be empty in the canada extension -->
+{%- endblock -%}
+
+{% block breadcrumb_content %}
+{% endblock %}
+
+{% block subtitle %}{% endblock %}
+
+{% block page_primary_action %}{% endblock %}
+
+{% block secondary_content %}
+
+    <h2>{{ _('Search Filters') }}</h2>
+  
+    {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['organization'],
+      name='organization') }}
+
+    {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['res_format'],
+      name='res_format', label_function=cr.res_label) }}
+    
+    {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['license_id'],
+      name='license_id', label_function=cr.license_lookup) }}
+    
+    {% block extra_facets %}
+      
+    {% endblock %}
+        
+    <div class="well well-sm">
+      {% set license = h.get_license('ca-ogl-lgo') %}
+      {% if license != None %}
+        {% if h.lang() == 'en' %}
+          <a href="{{ license.url }}">View the {{ license.title }}</a>
+        {% else %}
+          <a href="{{ license.url_fra }}">Voir la {{
+            license.title_fra[:1].lower() }}{{ license.title_fra[1:] }}</a>
+        {% endif %}
+      {% endif %}
+    </div>
+
+{% endblock %}
+
+  {% block search_title %}
+    {% if not no_title %}
+      {% snippet 'snippets/search_result_text.html', query=query, count=count, type=type %}
+    {% endif %}
+  {% endblock %}
+
+{% block filter_list %}
+{% for field in c.fields_grouped %}
+  {% set search_facets_items = c.search_facets.get(field)['items'] %}
+  <span class="facet">{{ c.facet_titles.get(field) }}:</span>
+  {% for value in c.fields_grouped[field] %}
+    <span class="filtered pill background-accent facet-filter">
+      {%- if c.translated_fields and c.translated_fields.has_key((field,value)) -%}
+        {{ c.translated_fields[(field,value)] }}
+      {% elif field == 'subject' %}
+        {# since we separate subjects by two spaces instead of a pipe... #}
+        {{ cr.split_subject_field(value, h.lang()) }}
+      {%- else -%}
+        {{ cr.split_bilingual_field(h.list_dict_filter(
+            search_facets_items , 'name', 'display_name', value),
+          h.lang()) }}
+      {%- endif %}
+      <a href="{{ c.remove_field(field, value) }}" class="remove" title="{{ _('Remove') }}"><span class="wb-icon-x"></span></a>
+    </span>
+  {% endfor %}
+{% endfor %}
+{% endblock %}
+
+{% block try_another_search %}
+<p class="extra">
+{%- trans -%}
+Please review your spelling, or reduce the number of filters selected.
+{%- endtrans -%}
+</p>
+{% endblock %}

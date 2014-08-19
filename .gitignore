@@ -1,0 +1,15 @@
+ckanext_canada.egg-info
+*.pyc
+.project
+.pydevproject
+build
+dist
+*.swp
+development.ini
+.DS_Store
+
+*.egg-info
+*.prefs
+ckan.log
+links/ckan
+links/test-core.ini

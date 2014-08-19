@@ -1,0 +1,18 @@
+{% ckan_extends %}
+
+{% import 'macros/canada_read.html' as cr %}
+
+{% block add_action_content %}
+  {% if h.check_access('package_create') %}
+    <li>{% link_for _('Add Dataset'), controller='package', action='new', class_="btn btn-primary", icon="plus-sign-alt" %}</li>
+  {% endif %}
+{% endblock %}
+
+{% block page_header %}
+  <div class="col-md-12">
+    <ul class="nav nav-pills">
+      {{ h.build_nav_icon('user_dashboard', _('News feed')) }}
+      {{ h.build_nav_icon('user_dashboard_datasets', _('My Datasets')) }}
+    </ul>
+  </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% ckan_extends %}
+
+{% block breadcrumb_content %}
+  <li>{% link_for _('Organizations'), controller='organization', action='index' %}</li>
+{% endblock %}
+
+{% block primary_content %}
+<div class="row">
+  <div class="col-md-12 mrgn-bttm-md">
+    <header>
+      <ul class="nav nav-pills">
+        <li class="{% if c.action == 'read' %}active{% endif %}">
+          <a href="{{h.url(controller='organization', action='read', id=c.group_dict.name)}}">{{_('Dataset')}}</a>
+        </li>
+        <li class="{% if c.action == 'activity' %}active{% endif %}">
+          <a href="{{h.url(controller='organization', action='activity', id=c.group_dict.name)}}">{{_('Activity')}}</a>
+        </li>
+      </ul>
+    </header>
+  </div>
+  <div class="col-md-12 mrgn-bttm-md">
+  {% block primary_content_inner %}
+  {% endblock %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{# 
+Displays a select box for ordering search results
+
+sort = The currently selected option
+
+Example:
+
+  {% snippet 'snippets/sort_by.html', sort=c.sort_by_selected %}
+
+#}
+<div class="form-group">
+  <label for="field-order-by" class="control-label">{{ _('Order by') }}</label>
+
+  <select id="field-order-by" name="sort" class="form-control input-sm">
+    <option value="title_string asc"{% if sort=='title_string asc' %} selected="selected"{% endif %}>{{ _('Name Ascending') }}</option>
+    <option value="title_string desc"{% if sort=='title_string desc' %} selected="selected"{% endif %}>{{ _('Name Descending') }}</option>
+    <option value="metadata_modified desc"{% if sort=='metadata_modified desc' or sort is none %} selected="selected"{% endif %}>{{ _('Last Modified') }}</option>
+  </select>
+
+</div>
