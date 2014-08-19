@@ -1,0 +1,8 @@
+{% ckan_extends %}
+{% import 'macros/canada_read.html' as cr %}
+{% block publisher_info %}
+<div class="row mrgn-tp-sm">
+  <div class="col-md-3"><em>{{ _('Organization') }}: </em></div>
+  <div class="cold-md-9">{{ cr.org_field(package, client_lang) }}</div>
+</div>
+{% endblock %}

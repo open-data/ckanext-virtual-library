@@ -1,0 +1,69 @@
+{# vim: set filetype=jinja sw=2 sts=2: #}
+{% extends "package/read_base.html" %}
+
+{% import 'macros/canada_read.html' as cr %}
+
+{% set pkg = c.pkg_dict %}
+{% set res = c.resource %}
+
+{% block breadcrumb_content %}
+  <li>{% link_for _('Datasets'), controller='package', action='search', highlight_actions = 'new index' %}</li>
+  <li>{% link_for cr.field(schema_description.dataset_field_by_id['title'], pkg, h.lang()) | truncate(30) | safe,
+        controller='package', action='read', id=pkg['name'] %}</li>
+{% endblock %}
+
+{% block secondary_content %}{% endblock %}
+
+{% block main_content %}
+  <div class="span-8">  
+  {% block primary_content %}
+    {% block resource %}
+      <section>
+        <div>
+          <div>
+            {% block resource_content %}
+              {% block resource_read_title %}<h3>{{
+                cr.resource_display_name(res, h.lang()) | truncate(50) | safe
+                }}</h3>{% endblock %}
+              <a class="button" href="{{ res.url }}"><span class="wb-icon-drive-download"></span>{{ _('Download') }}</a>
+              <div class="prose notes" property="rdfs:label">
+                {%- set notes = cr.field(
+                  schema_description.dataset_field_by_id['notes'],
+                  pkg, h.lang()) -%}
+                {%- if notes -%}
+                  <h3>{{ _('From the dataset abstract') }}</h3>
+                  <p>{{ h.markdown_extract(notes) }}</p>
+                  <p>{% trans
+                    dataset=cr.field(
+                        schema_description.dataset_field_by_id['title'],
+                        pkg,
+                        h.lang()),
+                    url=h.url_for(
+                        controller='package',
+                        action='read',
+                        id=pkg['name'])
+                    %}Source: <a href="{{ url }}">{{ dataset }}</a>{%
+                    endtrans %}
+                  </p>
+                {% endif %}
+              {% endblock %}
+            </div>
+          </div>
+          {% block data_preview %}
+            <div>
+              {% if c.resource.datastore_active %}
+                {# The resource preview feature of CKAN should only be used with an accessible previewer like ckanext-datatable #}
+  
+                {{ h.get_datapreview(c.resource.id) }}
+  
+              {% endif %}
+            </div>
+          {% endblock %}
+        </div>
+      </section>
+    {% endblock resource %}
+  </div>
+  {% endblock primary_content %}
+
+  <div class="clear"></div>
+{% endblock main_content %}

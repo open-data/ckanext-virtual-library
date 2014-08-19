@@ -1,0 +1,38 @@
+{# vim: set filetype=jinja sw=2 sts=2: #}
+{% import 'macros/canada_read.html' as cr %}
+
+{% set url = h.url_for(controller='package', action='resource_read', id=pkg.name, resource_id=res.id) %}
+{% set lang_field = schema_description.resource_field_by_id['language'] %}
+{% set format_field = schema_description.resource_field_by_id['format'] %}
+{% set size_field = schema_description.resource_field_by_id['size'] %}
+
+<tr> 
+  <td>
+    {% set name_field = 'name_fra' if h.lang() == 'fr' else 'name' %}
+    {% if name_field in res and res[name_field] %}
+      {{ h.markdown_extract(res[name_field], extract_length=80) }}
+    {% else %}
+      <span class="empty">{{ _('No description for this resource') }}</span>
+    {% endif %}
+  </td>
+  
+  <td>
+    {{ cr.lookup_field(format_field, res, client_lang) }}
+  </td>
+
+  <td>
+    {{ cr.lookup_field(lang_field, res, client_lang) }}
+  </td>
+  
+  <td>
+
+    <a href="{{ res.url }}" title="{{_('Resource') ~ ' ' ~ res_num}}"
+        class="btn btn-primary" target="_blank">{{ _('Download') }}</a>
+
+    {% if res.webstore_last_updated %}
+    &nbsp;
+    <a href="{{ url }}" class="btn btn-default" >{{ _('Preview') }}</a>
+    {% endif %}
+  </td>
+</tr>
+
