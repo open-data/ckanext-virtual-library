@@ -1,0 +1,56 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "doc",
+  "about_url": "http://github.com/open-data/ckanext-scheming",
+  "dataset_fields": [
+    {
+      "field_name": "name",
+      "label": "URL",
+      "validators": "not_empty unicode name_validator package_name_validator",
+      "form_snippet": "dataset_slug.html",
+      "form_placeholder": "eg. my-dataset"
+    },
+    {
+      "field_name": "title_ml",
+      "label": "Title",
+      "form_snippet": "large_text.html",
+      "validators": "if_empty_same_as(name) unicode",
+      "form_attrs": {"data-module": "slug-preview-target"},
+      "form_placeholder": "Publication Title"
+    },
+    {
+      "field_name": "gc_org",
+      "label": "Department or Agency",
+      "validators": "owner_org_validator unicode",
+      "form_snippet": "organization.html"
+    },
+    {
+      "field_name": "author_ml",
+      "label": "Author",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "desc_ml",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Some useful notes about the data"
+    },
+    {
+      "field_name": "subject_ml",
+      "label": "Subject",
+       "validators": "not_empty unicode"
+    },
+    {
+      "field_name": "keywords_ml",
+      "label": "Keywords",
+      "validators": "ignore_missing tag_string_convert",
+      "form_placeholder": "eg. economy, mental health, government",
+      "form_attrs": {
+        "data-module": "autocomplete",
+        "data-module-tags": "",
+        "data-module-source": "/api/2/util/tag/autocomplete?incomplete=?"
+      }
+    }
+  ]
+}
