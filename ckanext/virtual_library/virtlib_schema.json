@@ -1,56 +1,179 @@
 {
   "scheming_version": 1,
   "dataset_type": "doc",
-  "about_url": "http://github.com/open-data/ckanext-scheming",
+  "about_url": "http://github.com/open-data/ckanext-virtual-library",
   "dataset_fields": [
     {
       "field_name": "name",
-      "label": "URL",
+      "label": "Metadata Identifier",
       "validators": "not_empty unicode name_validator package_name_validator",
-      "form_snippet": "dataset_slug.html",
-      "form_placeholder": "eg. my-dataset"
+      "form_placeholder": "<TBD>"
     },
     {
       "field_name": "title_ml",
       "label": "Title",
-      "form_snippet": "large_text.html",
-      "validators": "if_empty_same_as(name) unicode",
-      "form_attrs": {"data-module": "slug-preview-target"},
+      "validators": "ignore_missing unicode",
       "form_placeholder": "Publication Title"
     },
     {
       "field_name": "gc_org",
       "label": "Department or Agency",
-      "validators": "owner_org_validator unicode",
-      "form_snippet": "organization.html"
+      "validators": "ignore_missing unicode"
     },
     {
-      "field_name": "author_ml",
+      "field_name": "author",
       "label": "Author",
       "form_placeholder": "Joe Bloggs",
+      "validators": "ignore_missing unicode",
       "display_property": "dc:creator"
     },
     {
-      "field_name": "desc_ml",
+      "field_name": "description_ml",
       "label": "Description",
-      "form_snippet": "markdown.html",
+      "validators": "ignore_missing unicode",
       "form_placeholder": "eg. Some useful notes about the data"
     },
     {
       "field_name": "subject_ml",
       "label": "Subject",
-       "validators": "not_empty unicode"
+      "validators": "ignore_missing unicode"
     },
     {
       "field_name": "keywords_ml",
       "label": "Keywords",
-      "validators": "ignore_missing tag_string_convert",
-      "form_placeholder": "eg. economy, mental health, government",
-      "form_attrs": {
-        "data-module": "autocomplete",
-        "data-module-tags": "",
-        "data-module-source": "/api/2/util/tag/autocomplete?incomplete=?"
-      }
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "isbn",
+      "label": "ISBN",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "issn",
+      "label": "ISSN",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "gc_catalogue_number",
+      "label": "GC Catalogue Number",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "dept_catalogue_number",
+      "label": "Departmental Catalogue Number",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "weekly_checklist_number",
+      "label": "Weekly Checklist Number",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "file_code",
+      "label": "File Code",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "gc_docs_number",
+      "label": "GC Docs Number",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "lac_identifier",
+      "label": "LAC Identifier",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "amicus_identifier",
+      "label": "Amicus Identifier",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "catalogue_number",
+      "label": "Catalogue System Number",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "doi",
+      "label": "DOI",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "series_title_ml",
+      "label": "Series Title",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "series_number_ml",
+      "label": "Series Number",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "frequency",
+      "label": "Frequency of Serial",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "former_frequency",
+      "label": "Former Frequency of Serial",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "license_id",
+      "label": "Licence",
+      "form_snippet": "license.html"
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "date_created",
+      "label": "Date Resource Created",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "date_published",
+      "label": "Date Resource Published",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "numeric_designation_ml",
+      "label": "Numeric and Chronological Designation",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "format_description_ml",
+      "label": "File Type",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "languages",
+      "label": "Languages",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "nature_genre_ml",
+      "label": "Type",
+      "validators": "ignore_missing unicode"
+    },
+    {
+      "field_name": "format",
+      "label": "Format",
+      "validators": "if_empty_guess_format ignore_missing clean_format unicode"
+    },
+    {
+      "field_name": "size",
+      "label": "Size",
+      "validators": "ignore_missing int_validator"
+    },
+    {
+      "field_name": "pages",
+      "label": "Number of Pages",
+      "validators": "ignore_missing int_validator"
+    },
+    {
+      "field_name": "url",
+      "label": "Access URL / Info",
+      "validators": "not_empty unicode remove_whitespace"
     }
   ]
 }
