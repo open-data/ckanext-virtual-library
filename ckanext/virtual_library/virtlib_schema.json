@@ -12,6 +12,8 @@
     {
       "field_name": "title_ml",
       "label": "Title",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"],
@@ -32,6 +34,8 @@
     {
       "field_name": "description_ml",
       "label": "Description",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"],
@@ -40,6 +44,8 @@
     {
       "field_name": "subject_ml",
       "label": "Subject",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"]
@@ -47,6 +53,8 @@
     {
       "field_name": "keywords_ml",
       "label": "Keywords",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"]
@@ -109,6 +117,8 @@
     {
       "field_name": "series_title_ml",
       "label": "Series Title",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"]
@@ -116,6 +126,8 @@
     {
       "field_name": "series_number_ml",
       "label": "Series Number",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"]
@@ -150,6 +162,8 @@
     {
       "field_name": "numeric_designation_ml",
       "label": "Numeric and Chronological Designation",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"]
@@ -157,6 +171,8 @@
     {
       "field_name": "format_description_ml",
       "label": "File Type",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"]
@@ -169,6 +185,8 @@
     {
       "field_name": "nature_genre_ml",
       "label": "Type",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"]
