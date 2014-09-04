@@ -12,7 +12,9 @@
     {
       "field_name": "title_ml",
       "label": "Title",
-      "validators": "ignore_missing unicode",
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"],
       "form_placeholder": "Publication Title"
     },
     {
@@ -30,18 +32,24 @@
     {
       "field_name": "description_ml",
       "label": "Description",
-      "validators": "ignore_missing unicode",
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"],
       "form_placeholder": "eg. Some useful notes about the data"
     },
     {
       "field_name": "subject_ml",
       "label": "Subject",
-      "validators": "ignore_missing unicode"
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"]
     },
     {
       "field_name": "keywords_ml",
       "label": "Keywords",
-      "validators": "ignore_missing unicode"
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"]
     },
     {
       "field_name": "isbn",
@@ -101,12 +109,16 @@
     {
       "field_name": "series_title_ml",
       "label": "Series Title",
-      "validators": "ignore_missing unicode"
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"]
     },
     {
       "field_name": "series_number_ml",
       "label": "Series Number",
-      "validators": "ignore_missing unicode"
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"]
     },
     {
       "field_name": "frequency",
@@ -138,12 +150,16 @@
     {
       "field_name": "numeric_designation_ml",
       "label": "Numeric and Chronological Designation",
-      "validators": "ignore_missing unicode"
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"]
     },
     {
       "field_name": "format_description_ml",
       "label": "File Type",
-      "validators": "ignore_missing unicode"
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"]
     },
     {
       "field_name": "languages",
@@ -153,7 +169,9 @@
     {
       "field_name": "nature_genre_ml",
       "label": "Type",
-      "validators": "ignore_missing unicode"
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"]
     },
     {
       "field_name": "format",
