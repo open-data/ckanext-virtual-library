@@ -1,0 +1,11 @@
+{%- set values = data[field.field_name] -%}
+
+{%- if  h.lang() in values -%}
+  {{ values[h.lang()] }}
+{%- else -%}
+  {%- for lang in values -%}
+    {%- if lang not in field.form_languages -%}
+      {{ values[lang] }}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
