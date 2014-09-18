@@ -22,9 +22,13 @@
       "metadata_element_set_id": "MES02"
     },
     {
-      "field_name": "gc_org",
+      "field_name": "source_organizations_ml",
       "label": "Department or Agency",
-      "validators": "ignore_missing unicode",
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"],
       "metadata_element_set_id": "MES03"
     },
     {
@@ -65,6 +69,12 @@
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"],
       "metadata_element_set_id": "MES07"
+    },
+    {
+      "field_name": "date_modified",
+      "label": "ISBN",
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES10"
     },
     {
       "field_name": "isbn",
@@ -163,6 +173,12 @@
       "label": "Former Frequency of Serial",
       "validators": "ignore_missing unicode",
       "metadata_element_set_id": "MES26"
+    },
+    {
+      "field_name": "other_language_url",
+      "label": "Other Language Edition",
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES30"
     },
     {
       "field_name": "license_id",
