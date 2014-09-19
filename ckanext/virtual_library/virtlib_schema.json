@@ -7,7 +7,8 @@
       "field_name": "name",
       "label": "Metadata Identifier",
       "validators": "not_empty unicode name_validator package_name_validator",
-      "form_placeholder": "<TBD>"
+      "form_placeholder": "<TBD>",
+      "metadata_element_set_id": "MES01"
     },
     {
       "field_name": "title_ml",
@@ -17,19 +18,26 @@
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"],
-      "form_placeholder": "Publication Title"
+      "form_placeholder": "Publication Title",
+      "metadata_element_set_id": "MES02"
     },
     {
-      "field_name": "gc_org",
+      "field_name": "source_organizations_ml",
       "label": "Department or Agency",
-      "validators": "ignore_missing unicode"
+      "form_snippet": "fluent_text.html",
+      "display_snippet": "fluent_text.html",
+      "validators": "fluent_text",
+      "output_validators": "fluent_text_output",
+      "form_languages": ["en", "fr"],
+      "metadata_element_set_id": "MES03"
     },
     {
       "field_name": "author",
       "label": "Author",
       "form_placeholder": "Joe Bloggs",
       "validators": "ignore_missing unicode",
-      "display_property": "dc:creator"
+      "display_property": "dc:creator",
+      "metadata_element_set_id": "MES04"
     },
     {
       "field_name": "description_ml",
@@ -39,7 +47,8 @@
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
       "form_languages": ["en", "fr"],
-      "form_placeholder": "eg. Some useful notes about the data"
+      "form_placeholder": "eg. Some useful notes about the data",
+      "metadata_element_set_id": "MES05"
     },
     {
       "field_name": "subject_ml",
@@ -48,7 +57,8 @@
       "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
-      "form_languages": ["en", "fr"]
+      "form_languages": ["en", "fr"],
+      "metadata_element_set_id": "MES06"
     },
     {
       "field_name": "keywords_ml",
@@ -57,62 +67,80 @@
       "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
-      "form_languages": ["en", "fr"]
+      "form_languages": ["en", "fr"],
+      "metadata_element_set_id": "MES07"
+    },
+    {
+      "field_name": "date_modified",
+      "label": "ISBN",
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES10"
     },
     {
       "field_name": "isbn",
       "label": "ISBN",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES12"
     },
     {
       "field_name": "issn",
       "label": "ISSN",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES13"
     },
     {
       "field_name": "gc_catalogue_number",
       "label": "GC Catalogue Number",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES14"
     },
     {
       "field_name": "dept_catalogue_number",
       "label": "Departmental Catalogue Number",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES15"
     },
     {
       "field_name": "weekly_checklist_number",
       "label": "Weekly Checklist Number",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES16"
     },
     {
       "field_name": "file_code",
       "label": "File Code",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES17"
     },
     {
       "field_name": "gc_docs_number",
       "label": "GC Docs Number",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES18"
     },
     {
       "field_name": "lac_identifier",
       "label": "LAC Identifier",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES19"
     },
     {
       "field_name": "amicus_identifier",
       "label": "Amicus Identifier",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES20"
     },
     {
       "field_name": "catalogue_number",
       "label": "Catalogue System Number",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES21"
     },
     {
       "field_name": "doi",
       "label": "DOI",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES22"
     },
     {
       "field_name": "series_title_ml",
@@ -121,7 +149,8 @@
       "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
-      "form_languages": ["en", "fr"]
+      "form_languages": ["en", "fr"],
+      "metadata_element_set_id": "MES23"
     },
     {
       "field_name": "series_number_ml",
@@ -130,34 +159,46 @@
       "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
-      "form_languages": ["en", "fr"]
+      "form_languages": ["en", "fr"],
+      "metadata_element_set_id": "MES24"
     },
     {
       "field_name": "frequency",
       "label": "Frequency of Serial",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES25"
     },
     {
       "field_name": "former_frequency",
       "label": "Former Frequency of Serial",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES26"
+    },
+    {
+      "field_name": "other_language_url",
+      "label": "Other Language Edition",
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES30"
     },
     {
       "field_name": "license_id",
       "label": "Licence",
-      "form_snippet": "license.html"
+      "form_snippet": "license.html",
+      "metadata_element_set_id": "MES36"
     }
   ],
   "resource_fields": [
     {
       "field_name": "date_created",
       "label": "Date Resource Created",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES11"
     },
     {
       "field_name": "date_published",
       "label": "Date Resource Published",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES08"
     },
     {
       "field_name": "numeric_designation_ml",
@@ -166,7 +207,8 @@
       "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
-      "form_languages": ["en", "fr"]
+      "form_languages": ["en", "fr"],
+      "metadata_element_set_id": "MES27"
     },
     {
       "field_name": "format_description_ml",
@@ -175,12 +217,14 @@
       "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
-      "form_languages": ["en", "fr"]
+      "form_languages": ["en", "fr"],
+      "metadata_element_set_id": "MES28"
     },
     {
       "field_name": "languages",
       "label": "Languages",
-      "validators": "ignore_missing unicode"
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES29"
     },
     {
       "field_name": "nature_genre_ml",
@@ -189,27 +233,32 @@
       "display_snippet": "fluent_text.html",
       "validators": "fluent_text",
       "output_validators": "fluent_text_output",
-      "form_languages": ["en", "fr"]
+      "form_languages": ["en", "fr"],
+      "metadata_element_set_id": "MES31"
     },
     {
       "field_name": "format",
       "label": "Format",
-      "validators": "if_empty_guess_format ignore_missing clean_format unicode"
+      "validators": "if_empty_guess_format ignore_missing clean_format unicode",
+      "metadata_element_set_id": "MES32"
     },
     {
       "field_name": "size",
       "label": "Size",
-      "validators": "ignore_missing int_validator"
+      "validators": "ignore_missing int_validator",
+      "metadata_element_set_id": "MES33"
     },
     {
       "field_name": "pages",
       "label": "Number of Pages",
-      "validators": "ignore_missing int_validator"
+      "validators": "ignore_missing int_validator",
+      "metadata_element_set_id": "MES34"
     },
     {
       "field_name": "url",
       "label": "Access URL / Info",
-      "validators": "not_empty unicode remove_whitespace"
+      "validators": "not_empty unicode remove_whitespace",
+      "metadata_element_set_id": "MES35"
     }
   ]
 }
