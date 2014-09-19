@@ -3,6 +3,7 @@ import ckan.plugins as p
 import ckan.lib.helpers as h
 import ckan.lib.formatters as formatters
 import ckan.model as model
+from ckanext.virtual_library import helpers
 
 class VirtualLibrary(p.SingletonPlugin):
     """
@@ -10,7 +11,7 @@ class VirtualLibrary(p.SingletonPlugin):
     This plugin requires the DataGCCAForms plugin
     """
     p.implements(p.IConfigurer)
-    #p.implements(p.ITemplateHelpers)
+    p.implements(p.ITemplateHelpers)
 
     def update_config(self, config):
 
@@ -18,4 +19,12 @@ class VirtualLibrary(p.SingletonPlugin):
         # files should be installed in the public folder
         p.toolkit.add_template_directory(config, 'templates')
         p.toolkit.add_public_directory(config, 'public')
+
+
+    def get_helpers(self):
+        return dict((h, getattr(helpers, h)) for h in [
+            'dataset_rating',
+            'dataset_comment_count',
+            'dataset_comments'
+            ])
 
