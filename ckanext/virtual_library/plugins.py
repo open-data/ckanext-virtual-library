@@ -25,6 +25,7 @@ class VirtualLibrary(p.SingletonPlugin):
         return dict((h, getattr(helpers, h)) for h in [
             'dataset_rating',
             'dataset_comment_count',
-            'dataset_comments'
+            'dataset_comments',
+            'get_license'
             ])
 
