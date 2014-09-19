@@ -1,0 +1,22 @@
+{% ckan_extends %}
+{% import 'macros/vl.html' as vl %}
+{%- set lang = h.lang() -%}
+
+{% block resource_item_title %}
+<td>
+    {{ vl.ml_text(res.numeric_designation_ml, lang) }}
+</td>
+<td>
+  {{ res.format }}
+</td>
+{% endblock %}
+
+{% block resource_item_language %}
+  <td >
+    {%- if res.format_description_ml['fra'] -%}
+      {{ _('French') }}
+    {%- else -%}
+      {{ _('English') }}
+    {%- endif -%}
+  </td>
+{% endblock %}

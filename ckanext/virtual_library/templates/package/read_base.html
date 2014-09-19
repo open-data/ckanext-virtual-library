@@ -1,13 +1,85 @@
 {% ckan_extends %}
 
-{% import 'macros/canada_read.html' as cr %}
+{% import 'macros/vl.html' as vl %}
 
 {% set pkg = c.pkg_dict %}
 {% set client_lang = h.lang() %}
 
-{% block page_header %}
+{% block page_header %}{% endblock %}
 
-{% endblock %}
+{% block secondary_content %}
+
+  {% block ds_socialmedia %}
+  {% include "package/snippets/ratings.html" %}
+  {% endblock ds_socialmedia %}
+
+  {%- set lang = h.lang() -%}
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+  <div class="panel-title">{{_('Follow')}}</div>
+  <a href="{{ h.url_for(action='history', controller='package', id=pkg.id)
+    }}?format=atom" title="RSS"><span class="fa fa-rss"></span> {{_('RSS Feed')}}</a>
+  </div>
+  {%- if c.pkg_dict.subject_ml -%}
+  <div class="panel-body">
+    <strong>{{ _('Subject') }} : </strong>
+    {{ vl.ml_text(c.pkg_dict.subject_ml, lang) }}
+  </div>
+  {%- endif -%}
+
+  {%- if c.pkg_dict.issn -%}
+  <div class="panel-body">
+    <strong>{{ _('ISSN') }} : </strong>
+    {{ c.pkg_dict.issn }}
+  </div>
+  {%- endif -%}
+
+  {%- if c.pkg_dict.isbn -%}
+  <div class="panel-body">
+    <strong>{{ _('ISBN') }} : </strong>
+    {{ c.pkg_dict.isbn }}
+  </div>
+  {%- endif -%}
+
+  {%- if c.pkg_dict.gc_catalogue_number -%}
+  <div class="panel-body">
+    <strong>{{ _('GC Catalogue Number') }} : </strong>
+    {{ c.pkg_dict.gc_catalogue_number }}
+  </div>
+  {%- endif -%}
+
+  {%- if c.pkg_dict.dept_catalogue_number -%}
+  <div class="panel-body">
+    <strong>{{ _('Departmental Catalogue Number') }} : </strong>
+    {{ c.pkg_dict.dept_catalogue_number }}
+  </div>
+  {%- endif -%}
+
+  {%- if c.pkg_dict.weekly_checklist_number -%}
+  <div class="panel-body">
+    <strong>{{ _('Weekly Checklist Number') }} : </strong>
+    {{ c.pkg_dict.weekly_checklist_number }}
+  </div>
+  {%- endif -%}
+
+  {%- if c.pkg_dict.series_title_ml -%}
+  <div class="panel-body">
+    <strong>{{ _('Series Title') }} : </strong>
+    {{ vl.ml_text(c.pkg_dict.series_title_ml, lang) }}
+  </div>
+  {%- endif -%}
+
+  {%- if c.pkg_dict.series_number_ml -%}
+  <div class="panel-body">
+    <strong>{{ _('Series Number') }} : </strong>
+    {{ vl.ml_text(c.pkg_dict.series_number_ml, lang) }}
+  </div>
+  {%- endif -%}
+
+</div>
+
+{% endblock secondary_content %}
 
 {% block breadcrumb_content %}
   {% set dataset = pkg.title or pkg.name %}
@@ -15,6 +87,4 @@
   <li>{% link_for _('Search Data'), controller='package', action='search', highlight_actions = 'new index' %}</li>
 {% endblock %}
 
-{% block secondary_content %}
-
-{% endblock %}
+{% block page_title %}{% endblock %}
