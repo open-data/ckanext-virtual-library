@@ -3,6 +3,15 @@
 
 {% block notes %}{{ vl.ml_text(package.description_ml, client_lang) }}{% endblock %}
 
+{% block heading_title %}
+  {%- if client_lang == 'fr' -%}
+    <li><a href="{% url_for '/doc', locale='fr' %}/{{ package.name }}">{{ _('Search Information') }}</a></li>
+  {%- else -%}
+    <li><a href="{% url_for '/doc', locale='en' %}/{{ package.name }}">{{ _('Search Information') }}</a></li>
+  {%- endif -%}
+  {# h.link_to(h.truncate(title, truncate_title), h.url_for(controller='package', action='read', id=package.name, use_default_schema=False)) #}
+{% endblock %}
+
 {% block publisher_info %}
 <div class="row mrgn-tp-sm">
   <div class="col-md-3"><em>{{ _('Organization') }}: </em></div>
