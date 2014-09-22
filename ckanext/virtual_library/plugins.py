@@ -4,6 +4,7 @@ import ckan.lib.helpers as h
 import ckan.lib.formatters as formatters
 import ckan.model as model
 from ckanext.virtual_library import helpers
+from wcms import wcms_configure
 
 class VirtualLibrary(p.SingletonPlugin):
     """
@@ -12,6 +13,7 @@ class VirtualLibrary(p.SingletonPlugin):
     """
     p.implements(p.IConfigurer)
     p.implements(p.ITemplateHelpers)
+    p.implements(p.IConfigurable)
 
     def update_config(self, config):
 
@@ -29,3 +31,7 @@ class VirtualLibrary(p.SingletonPlugin):
             'get_license'
             ])
 
+    def configure(self, config):
+
+        if ('ckan.drupal.url' in config):
+            wcms_configure(config['ckan.drupal.url'])
