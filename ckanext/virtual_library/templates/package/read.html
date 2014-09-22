@@ -1,17 +1,19 @@
 {% ckan_extends %}
 
-{% block developer_tools %}{% endblock %}
-
 {% block package_item_notes %}
 {% if c.pkg_dict.description_ml %}
 <div class="col-md-12">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <p>{{ c.pkg_dict.description_ml['en'] }}</p>
-    </div>
-  </div>
+  <p>{{ c.pkg_dict.description_ml['en'] }}</p>
 </div>
 {% endif %}
+{% endblock %}
+
+{% block developer_tools %}
+<div class="col-md-12">
+  <h3 class="h4">{{ _('Related Items') }}</h3>
+  {{ _('Other Language Edition') }} : {{ c.pkg_dict.other_language_url }}
+</div>
+{# endif #}
 {% endblock %}
 
 {% block package_comments %}
