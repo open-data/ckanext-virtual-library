@@ -4,7 +4,7 @@
 
 {% block resource_item_title %}
 <td>
-    {{ vl.ml_text(res.numeric_designation_ml, lang) }}
+    {{ vl.ml_text(res.numeric_designation_ml, lang) or _('Resource') }}
 </td>
 <td>
   {{ res.format }}
@@ -19,4 +19,12 @@
       {{ _('English') }}
     {%- endif -%}
   </td>
+{% endblock %}
+
+{% block resource_item_description %}
+<td >
+  <a href="{{ res.url }}" title="{{ res.name or res.description or _('Resource') }}">
+    <span class="badge">{{ _('Download') }}</span>
+  </a>
+</td>
 {% endblock %}

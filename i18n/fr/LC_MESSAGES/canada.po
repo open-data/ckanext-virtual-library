@@ -1,0 +1,567 @@
+# This file is meant to be combined with CKAN v2.0.1's
+# "ckan/i18n/fr/LC_MESSAGES/ckan.po" file using msgcat --use-first
+#
+# Thia file is being maintained by hand so that changes are visible
+# in source control.  CKAN's .po file is reported as binary by git
+# for some reason.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+
+msgid "You are now following {0}"
+msgstr "Vous êtes maintenant abonné à {0}"
+
+msgid "You are no longer following {0}"
+msgstr "Vous n'êtes plus abonné à {0}"
+
+msgid "Dataset has been deleted."
+msgstr "L'ensemble de données a été supprimé."
+
+msgid "Show more"
+msgstr "Afficher plus"
+
+msgid "Show less"
+msgstr "Afficher moins"
+
+msgid "Log in"
+msgstr "Connexion"
+
+msgid "Load more"
+msgstr "En charger davantage"
+
+msgid "No activities are within this activity stream"
+msgstr "Aucune activité pour cet élément"
+
+msgid "Activity Stream"
+msgstr "Flux d'Activités"
+
+msgid "Confirm Delete"
+msgstr "Confirmer l'annulation"
+
+msgid "Create Dataset"
+msgstr "Créer un jeu de données"
+
+msgid "What are datasets?"
+msgstr "Qu’est-ce qu’un ensemble de données?"
+
+msgid "Draft"
+msgstr "Ébauche"
+
+msgid " <p class=\"extra\">Please try another search.</p> "
+msgstr "Veuillez essayer une nouvelle recherche"
+
+msgid "Additional Info"
+msgstr "Information additionnelle"
+
+msgid "Edit Dataset"
+msgstr "Modifier ensemble de données "
+
+msgid "Edit Resources"
+msgstr "Modifier ressources"
+
+msgid "Next: Add Data"
+msgstr "Suivant : ajouter données"
+
+msgid "Last Modified"
+msgstr "date de modification"
+
+msgid "Save & add another"
+msgstr "Sauvegarder et ajouter un autre "
+
+msgid "Next: Additional Info"
+msgstr "Suivant : renseignements supplémentaires"
+
+msgid "Data and Resources"
+msgstr "Données et ressources"
+
+msgid "This item has no description"
+msgstr "Aucune description disponible pour cet ensemble de données"
+
+msgid "Clear All"
+msgstr "Effacer tout"
+
+msgid "Show More {facet}"
+msgstr "Afficher plus d'{facet}"
+
+msgid "Show Only Popular {facet}"
+msgstr "Afficher uniquement les {facet} populaires"
+
+msgid "There are no filters for this search"
+msgstr "Aucun filtre sélectionné pour cette recherche"
+
+msgid "Go"
+msgstr "Allez"
+
+msgid "Popular"
+msgstr "popularité"
+
+msgid "This dataset has no description"
+msgstr "Aucune description disponible pour cet ensemble de données"
+
+msgid "{number} dataset found for \"{query}\""
+msgid_plural "{number} datasets found for \"{query}\""
+msgstr[0] "{number} jeu de données trouvé"
+msgstr[1] "{number} jeux de données trouvés"
+
+msgid "Sorry no datasets found for \"{query}\""
+msgstr "0 ensemble de données trouvé"
+
+msgid "{number} dataset found"
+msgid_plural "{number} datasets found"
+msgstr[0] "{number} jeu de données trouvé"
+msgstr[1] "{number} jeux de données trouvés"
+
+msgid "Sorry no datasets found"
+msgstr "0 ensembles de données trouvés"
+
+msgid "Sorry no organizations found for \"{query}\""
+msgstr "0 organisations trouvées"
+
+msgid "Sorry no organizations found"
+msgstr "0 organisations trouvées"
+
+msgid "Order by"
+msgstr "Trier par"
+
+msgid "Relevance"
+msgstr "pertinence"
+
+msgid "Name Ascending"
+msgstr "alphabétique croissant"
+
+msgid "Name Descending"
+msgstr "alphabétique décroissant"
+
+msgid "Email"
+msgstr "Courriel"
+
+msgid "News feed"
+msgstr "Fil de nouvelles"
+
+msgid "Activity from items that you follow"
+msgstr "Il faut une activité sur le fil d’information des éléments dont vous faites le suivi "
+
+msgid "My Datasets"
+msgstr "Mes ensembles de données"
+
+msgid "You do not have any datasets"
+msgstr "Vous n'avez aucun ensemble de données"
+
+msgid "Account Info"
+msgstr "Renseignements sur le compte"
+
+msgid "A little information about yourself"
+msgstr "Un peu d'information vous concernant"
+
+msgid "Update Profile"
+msgstr "Mettre à jour le profil"
+
+msgid "Create an Account"
+msgstr "Créer un compte"
+
+msgid "You are now logged out."
+msgstr "Vous êtes maintenant déconnecté"
+
+msgid "Remember me"
+msgstr "Mémoriser mes informations"
+
+msgid "Register for an Account"
+msgstr "S’inscrire pour obtenir un compte"
+
+msgid "Reset Your Password"
+msgstr "Réinitialiser votre mot de passe"
+
+msgid "You haven't created any datasets."
+msgstr "Vous n'avez créé aucun ensemble de données"
+
+msgid "Create one now?"
+msgstr "Vous voulez en créer un maintenant?"
+
+msgid "Member Since"
+msgstr "Membre depuis"
+
+msgid "Request Reset"
+msgstr "Demander une réinitialisation"
+
+msgid "You are not following anything"
+msgstr "Vous ne faites aucun suivi"
+
+msgid "E-mail"
+msgstr "Courriel"
+
+msgid "E-Mail"
+msgstr "Courriel"
+
+
+
+#: ckanext-canada/ckanext/canada/templates/internal/base.html
+msgid "Open Data Registry"
+msgstr "Registre de données ouvertes"
+
+msgid "Departments"
+msgstr "Ministères"
+
+msgid "Need an Account"
+msgstr "Besoin d’un compte"
+
+msgid "Then sign right up, it only takes a minute"
+msgstr "Inscrivez-vous maintenant, cela ne prend qu’une minute"
+
+msgid "Forgotten your details"
+msgstr "Vous avez oublié vos coordonnées"
+
+msgid "No problem, use our password recovery form to reset it"
+msgstr "Utilisez notre formulaire de récupération de mot de passe pour rétablir votre identité"
+
+msgid "Search Data"
+msgstr "Recherche de données"
+
+msgid "Search Datasets"
+msgstr "Recherche de données"
+
+msgid "Help"
+msgstr "Aide"
+
+msgid "Stay connected"
+msgstr "Restez branchés"
+
+msgid "Health"
+msgstr "Santé"
+
+msgid "Travel"
+msgstr "Voyage"
+
+msgid "Jobs"
+msgstr "Emplois"
+
+msgid "Economy"
+msgstr "Économie"
+
+msgid "healthycanadians.gc.ca"
+msgstr "canadiensensante.gc.ca"
+
+msgid "travel.gc.ca"
+msgstr "voyage.gc.ca"
+
+msgid "jobbank.gc.ca"
+msgstr "guichetemplois.gc.ca"
+
+msgid "actionplan.gc.ca"
+msgstr "plandaction.gc.ca"
+
+msgid "What are Organizations"
+msgstr "Qu’est qu’une organisation"
+
+msgid "Search open data"
+msgstr "Chercher dans les données ouvertes"
+
+msgid "Subject"
+msgstr "Sujet"
+
+msgid "File Format"
+msgstr "Format du fichier"
+
+msgid "Published or Pending"
+msgstr "Publié ou en attente de publication"
+
+msgid "Next"
+msgstr "Suivant"
+
+msgid "Openness rating"
+msgstr "Degré d’ouverture des données"
+
+msgid "My Account"
+msgstr "Mon compte"
+
+msgid "Activities"
+msgstr "Activités"
+
+msgid "No full name provided"
+msgstr "Aucun nom complet fourni"
+
+msgid "You have not provided a biography"
+msgstr "Vous n’avez pas fourni de biographie"
+
+msgid ""
+" Your profile lets other Open Data Registry users know about who you "
+"are and what you do. "
+msgstr "Votre profil permet aux autres utilisateurs de Registre de données ouvertes de savoir qui vous êtes et ce que vous faites"
+
+msgid "Temporal Coverage"
+msgstr "Couverture temporelle"
+
+msgid "Developer Tools"
+msgstr "Outils pour le développeur"
+
+msgid "Guidelines"
+msgstr "Lignes directrices"
+
+msgid "Open Data Portal Metadata Implementation Guide"
+msgstr "Guide de mise en place des métadonnées pour les ressources Web"
+
+msgid "About this Dataset"
+msgstr "À propos de ce jeu de données"
+
+msgid "This dataset has been deleted and is no longer accessible to non-admin users"
+msgstr "Cet ensemble de données a été supprimé et n'est plus accessible"
+
+msgid "Activity"
+msgstr "Activité"
+
+msgid "Catalog Type"
+msgstr "Type de Catalogue"
+
+msgid "Resource Name"
+msgstr "Nom de la ressource"
+
+msgid "Size (MB)"
+msgstr "Taille (Mo)"
+
+msgid "Link"
+msgstr "Lien"
+
+msgid "Program Page"
+msgstr "Page du programme"
+
+msgid "Geographic Information"
+msgstr "Information géographique"
+
+msgid "You can use <a href='http://daringfireball.net/projects/markdown/syntax' target='_blank'>Markdown formatting</a> here"
+msgstr "Vous pouvez utiliser le formatage <a href=\"http://daringfireball.net/projects/markdown/syntax\" target=\"_blank\">Markdown</a> ici"
+
+msgid "Forgotten your password?"
+msgstr "Vous avez oublié votre mot de passe?"
+
+msgid "Add another resource"
+msgstr "Ajouter une autre ressource"
+
+msgid "Dataset Resources"
+msgstr "Ressources de l'ensemble de données"
+
+msgid "The information on this page (the dataset metadata) is also available in JSON format"
+msgstr "L’information sur cette page (les métadonnées du jeu de données) est aussi disponible en format JSON"
+
+msgid "Link to JSON format"
+msgstr "Lien au format JSON"
+
+msgid "Read more about this site's API: <a href='%(portal)s/eng/developers-corner-api'>About the API</a>"
+msgstr "En savoir plus sur l’API du site: <a href='%(portal)s/fra/coin-des-developpeurs-ipa'>À propos du API</a>"
+
+msgid "Data Type"
+msgstr "Type de données"
+
+msgid "No datasets were found to match your query."
+msgstr "Aucun jeu de données ne correspond aux termes de recherche spécifiés."
+
+msgid "Please review your spelling, or reduce the number of filters selected."
+msgstr "S'il vous plaît vérifier l’orthographe, ou réduire le nombre de filtres sélectionnés."
+
+msgid "The following fields are required to publish this dataset:"
+msgstr "Les champs suivants doivent être remplis afin de publier ce jeu de données:"
+
+msgid "<p><strong>Note</strong></p><p>%s is now logged in</p>"
+msgstr "<p><strong>Note</strong></p><p>Bienvenue %s</p>"
+
+msgid "A resource has been added"
+msgstr "Une ressource a été ajoutée"
+
+
+msgid "This dataset is currently unrated"
+msgstr "Aucune évaluation n’est disponible actuellement pour cet ensemble de données"
+
+msgid "This dataset is currently ranked zero stars"
+msgstr "Cet ensemble est considéré comme des données sans étoile"
+
+msgid "This dataset is currently ranked one star"
+msgstr "Cet ensemble est considéré comme des données une étoile"
+
+msgid "This dataset is currently ranked two stars"
+msgstr "Cet ensemble est considéré comme des données deux étoiles"
+
+msgid "This dataset is currently ranked three stars"
+msgstr "Cet ensemble est considéré comme des données trois étoiles"
+
+msgid "This dataset is currently ranked four stars"
+msgstr "Cet ensemble est considéré comme des données quatre étoiles"
+
+msgid "This dataset is currently ranked five stars"
+msgstr "Cet ensemble est considéré comme des données cinq étoiles"
+
+msgid "one star"
+msgstr "une étoile"
+
+msgid "two stars"
+msgstr "deux étoiles"
+
+msgid "three stars"
+msgstr "trois étoiles"
+
+msgid "four stars"
+msgstr "quatre étoiles"
+
+msgid "five stars"
+msgstr "cinq étoiles"
+
+#: ckanext-canada/ckanext/canada/templates/public/mega_menu.html
+msgid "About data.gc.ca"
+msgstr "À propos de donnees.gc.ca"
+
+msgid "About data.gc.ca - Main page"
+msgstr "À propos de donnees.gc.ca - Page principal"
+
+msgid "Open Government Licence"
+msgstr "Licence du gouvernement ouvert – Canada"
+
+msgid "Frequently Asked Questions"
+msgstr "Foire aux questions"
+
+msgid "Open Data 101"
+msgstr "L'abc des données ouverte"
+
+msgid "Open Data Principles"
+msgstr "Principes de données ouvertes"
+
+msgid "Open Data - Main page"
+msgstr "Données ouvertes - Page principal"
+
+msgid "Showcase"
+msgstr "Recherche de données"
+
+msgid "Open Data in Canada"
+msgstr "Données ouvertes au Canada"
+
+msgid "Featured Data"
+msgstr "Données regardées de près"
+
+msgid "Developer's Corner"
+msgstr "Coin des développeurs"
+
+msgid "Facts & Figures"
+msgstr "Faits et chiffres"
+
+msgid "Principes de données ouvertes"
+msgstr "Open Data Principles"
+
+msgid "Search Summaries of Completed ATI requests"
+msgstr "Recherche des sommaires de demandes d'AI complétées"
+
+msgid "Canada's Action Plan on Open Government"
+msgstr "Plan d'action du Canada pour un gouvernement ouvert"
+
+msgid "Advisory Panel"
+msgstr "Comité consultatif"
+
+msgid "Open Government - Main page"
+msgstr "Gouvernement ouvert - Page principal"
+
+msgid "Participate"
+msgstr "Participer"
+
+msgid "Give Us Your Feedback"
+msgstr "Faites-nous part de vos commentaires"
+
+msgid "Blog"
+msgstr "Blogue"
+
+msgid "Suggest a Dataset"
+msgstr "Proposez un jeu de données"
+
+msgid "Submit Your App"
+msgstr "Informez-nous de votre application"
+
+msgid "Participate - Main page"
+msgstr "Participer - Page principal"
+
+msgid "data.gc.ca"
+msgstr "donnees.gc.ca"
+
+msgid "Search Filters"
+msgstr "Critères de recherche"
+
+msgid "Search Results:"
+msgstr "Résultats de la recherche:"
+
+msgid "Submit"
+msgstr "Rechercher"
+
+msgid "data.gc.ca Dataset Feed"
+msgstr "Nouveaux jeux de données"
+
+msgid "Have your say"
+msgstr "À vous la parole"
+
+msgid "Rate this dataset"
+msgstr "Coter ce jeu de données"
+
+msgid "Comment"
+msgstr "Commentaire"
+
+msgid "Comment(s)"
+msgstr "Commentaire(s)"
+
+msgid "Comments"
+msgstr "Commentaires"
+
+msgid "RSS Feed"
+msgstr "Fils RSS"
+
+msgid "From the dataset abstract"
+msgstr "Résumé du jeu de données"
+
+msgid "Ready to Publish"
+msgstr "Prêt à publier"
+
+msgid "true"
+msgstr "vrai"
+
+msgid "Select All for Publishing"
+msgstr "Sélectionner tout pour publication"
+
+msgid "Publish?"
+msgstr "Publier?"
+
+msgid "Publish Selected Datasets"
+msgstr "Publier les jeux de données sélectionnés"
+
+msgid "Related Items"
+msgstr "Articles connexes"
+
+msgid "to"
+msgstr "à"
+
+msgid "to undefined"
+msgstr "à non défini"
+
+msgid "undefined to"
+msgstr "non défini à"
+
+msgid "Compare"
+msgstr "Comparer"
+
+msgid "Revision Differences"
+msgstr "Différences entre les révisions"
+
+msgid ""
+"This is an old revision of this dataset, as edited at %(timestamp)s. It may "
+"differ significantly from the <a href=\"%(url)s\">current revision</a>."
+msgstr "Il s’agit d’une ancienne révision de cet ensemble de données, qui a été effectuée le %(timestamp)s. Cette révision peut différer considérablement de la <a href=\"%(url)s\">révision actuelle</a>."
+
+msgid ""
+"This is the current revision of this dataset, as edited at %(timestamp)s."
+msgstr "Voici la révision actuelle de cet ensemble de données, qui a été effectuée le %(timestamp)s."
+
+msgid "An active account linked to your department is required to create or modify datasets in the registry."
+msgstr "Il faut d'obtenir une compte actif et relié à votre ministère de créer ou modifier de jeux de données dans le registre."
+
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+msgid "Department"
+msgstr "Ministère"
+
+msgid "Account Created"
+msgstr "Compte créé"
