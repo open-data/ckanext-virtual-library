@@ -565,3 +565,38 @@ msgstr "Ministère"
 
 msgid "Account Created"
 msgstr "Compte créé"
+
+# Added for Virtual Library
+
+msgid "Sorry no resources found for \"{query}\""
+msgstr "Désolé, aucun ressources trouvé pour \"{query}\""
+
+msgid "Rate this resource"
+msgstr "Coter ce ressource"
+
+msgid "No resources were found to match your query."
+msgstr "Aucun ressources trouvé pour votre requête."
+
+msgid "{number} resource found"
+msgid_plural "{number} resources found"
+msgstr[0] "{number} ressource trouvé"
+msgstr[1] "{number} ressources trouvés"
+
+msgid "{number} resources found"
+msgstr "{number} ressources trouvés"
+
+#: ckan/templates/snippets/search_result_text.html
+msgid "No resources found for \"{query}\""
+msgstr "Aucun ressources trouvé pour \"{query}\""
+
+msgid "{number} resource found for \"{query}\""
+msgid_plural "{number} resources found for \"{query}\""
+msgstr[0] "{number} ressource trouvé pour \"{query}\""
+msgstr[1] "{number} ressources trouvés pour \"{query}\""
+
+msgid "Open Government Licence - Canada"
+msgstr "Licence du gouvernement ouvert - Canada"
+
+msgid "Other Language Edition"
+msgstr "Disponibilité dans d'autres langues"
+

@@ -1,9 +1,15 @@
 {%- macro ml_text(field_values, client_lang) -%}
-    {%- if 'fr' in field_values and client_lang == 'fr' -%}
-      {{- field_values[client_lang] -}}
+    {%- if client_lang == 'fr' -%}
+        {%- if 'fr' in field_values  -%}
+            {{- field_values[client_lang] -}}
+        {%- elif 'en' in field_values  -%}
+            {{- field_values['en'] -}}
+        {%- endif -%}
     {%- else -%}
       {%- if 'en' in field_values  -%}
         {{- field_values['en'] -}}
+      {%- elif 'fr' in field_values  -%}
+            {{- field_values['fr'] -}}
       {%- endif -%}
     {%- endif -%}
 {%- endmacro -%}
