@@ -1,5 +1,12 @@
 {% ckan_extends %}
 
+{% block package_organization %}
+<div class="col-md-12">
+  <h4>{{ _('Organization') }}: </h4>
+  {{ vl.ml_text(pkg.source_organizations_ml, client_lang) }}
+</div>
+{% endblock %}
+
 {% block package_item_notes %}
 {% if c.pkg_dict.description_ml %}
 <div class="col-md-12">
