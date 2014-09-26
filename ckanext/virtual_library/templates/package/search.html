@@ -8,7 +8,7 @@
 {% block breadcrumb_content %}
 {% endblock %}
 
-{% block subtitle %}{% endblock %}
+{% block page_title %}{% endblock %}
 
 {% block page_primary_action %}{% endblock %}
 
@@ -43,11 +43,11 @@
 
 {% endblock %}
 
-  {% block search_title %}
-    {% if not no_title %}
-      {% snippet 'snippets/search_result_text.html', query=query, count=count, type='doc' %}
-    {% endif %}
-  {% endblock %}
+{% block search_title %}
+  {% if not no_title %}
+    {% snippet 'snippets/search_result_text.html', query=query, count=count, type='doc' %}
+  {% endif %}
+{% endblock %}
 
 
 {% block try_another_search %}

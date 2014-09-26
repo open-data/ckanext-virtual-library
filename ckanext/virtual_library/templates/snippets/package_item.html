@@ -5,16 +5,16 @@
 
 {% block heading_title %}
   {%- if client_lang == 'fr' -%}
-    <li><a href="{% url_for '/doc', locale='fr' %}/{{ package.name }}">{{ h.truncate(vl.ml_text(package.title_ml, client_lang), length=120) }}</a></li>
+    <a href="{% url_for '/doc', locale='fr' %}/{{ package.name }}">{{ h.truncate(vl.ml_text(package.title_ml, client_lang), length=120) }}</a>
   {%- else -%}
-    <li><a href="{% url_for '/doc', locale='en' %}/{{ package.name }}">{{ h.truncate(vl.ml_text(package.title_ml, client_lang), length=120) }}</a></li>
+    <a href="{% url_for '/doc', locale='en' %}/{{ package.name }}">{{ h.truncate(vl.ml_text(package.title_ml, client_lang), length=120) }}</a>
   {%- endif -%}
   {# h.link_to(h.truncate(title, truncate_title), h.url_for(controller='package', action='read', id=package.name, use_default_schema=False)) #}
 {% endblock %}
 
 {% block publisher_info %}
-<div class="row mrgn-tp-sm">
+<div class="row mrgn-tp-md">
   <div class="col-md-3"><em>{{ _('Organization') }}: </em></div>
-  <div class="cold-md-9">{{ vl.ml_text(package.source_organizations_ml, client_lang) }}</div>
+  <div class="col-md-9">{{ vl.ml_text(package.source_organizations_ml, client_lang) }}</div>
 </div>
 {% endblock %}
