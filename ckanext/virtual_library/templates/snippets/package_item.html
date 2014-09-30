@@ -4,10 +4,17 @@
 {% block notes %}{{ vl.ml_text(package.description_ml, client_lang) }}{% endblock %}
 
 {% block heading_title %}
+  {% set package_title = h.truncate(package.title, length=120) %}
+  {% if package.title_ml %}
+    {% set package_title = h.truncate(vl.ml_text(package.title_ml, client_lang), length=120) %}
+    {% if package_title == '' %}
+      {% set package_title =  h.truncate(package.title, length=120) %}
+    {% endif %}
+  {% endif %}
   {%- if client_lang == 'fr' -%}
-    <a href="{% url_for '/doc', locale='fr' %}/{{ package.name }}">{{ h.truncate(vl.ml_text(package.title_ml, client_lang), length=120) }}</a>
+    <a href="{% url_for '/doc', locale='fr' %}/{{ package.name }}">{{ package_title }}</a>
   {%- else -%}
-    <a href="{% url_for '/doc', locale='en' %}/{{ package.name }}">{{ h.truncate(vl.ml_text(package.title_ml, client_lang), length=120) }}</a>
+    <a href="{% url_for '/doc', locale='en' %}/{{ package.name }}">{{ package_title }}</a>
   {%- endif -%}
   {# h.link_to(h.truncate(title, truncate_title), h.url_for(controller='package', action='read', id=package.name, use_default_schema=False)) #}
 {% endblock %}

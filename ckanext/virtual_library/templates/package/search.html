@@ -15,12 +15,19 @@
 {% block secondary_content %}
 
     <h2>{{ _('Search Filters') }}</h2>
-  
-    {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['organization'],
-      name='organization') }}
-
-    {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['res_format'],
-      name='res_format') }}
+   {% if dataset_type == 'doc' %}
+     {% if h.lang() == 'fr' %}
+      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['vocab_source_org_fr'],
+        name='vocab_source_org_fr') }}
+      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['vocab_subject_fr'],
+        name='vocab_subject_fr') }}
+     {% else %}
+      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['vocab_source_org_en'],
+        name='vocab_source_org_en') }}
+      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['vocab_subject_en'],
+        name='vocab_subject_en') }}
+      {% endif %}
+    {% endif %}
     
     {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['license_id'],
       name='license_id') }}

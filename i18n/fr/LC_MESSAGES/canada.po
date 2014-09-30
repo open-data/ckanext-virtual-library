@@ -345,6 +345,9 @@ msgstr "Ressources de l'ensemble de données"
 msgid "The information on this page (the dataset metadata) is also available in JSON format"
 msgstr "L’information sur cette page (les métadonnées du jeu de données) est aussi disponible en format JSON"
 
+msgid "The information on this page (the publication metadata) is also available in JSON format"
+msgstr "L’information sur cette page (les métadonnées de la publication) est aussi disponible en format JSON"
+
 msgid "Link to JSON format"
 msgstr "Lien au format JSON"
 

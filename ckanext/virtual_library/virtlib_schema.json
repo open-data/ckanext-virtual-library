@@ -77,6 +77,12 @@
       "metadata_element_set_id": "MES10"
     },
     {
+      "field_name": "date_published",
+      "label": "Date Resource Published",
+      "validators": "ignore_missing unicode",
+      "metadata_element_set_id": "MES08"
+    },
+    {
       "field_name": "isbn",
       "label": "ISBN",
       "validators": "ignore_missing unicode",
@@ -193,12 +199,6 @@
       "label": "Date Resource Created",
       "validators": "ignore_missing unicode",
       "metadata_element_set_id": "MES11"
-    },
-    {
-      "field_name": "date_published",
-      "label": "Date Resource Published",
-      "validators": "ignore_missing unicode",
-      "metadata_element_set_id": "MES08"
     },
     {
       "field_name": "numeric_designation_ml",
