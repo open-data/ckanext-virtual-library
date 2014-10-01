@@ -4,6 +4,7 @@ import ckan.plugins as p
 import ckan.lib.helpers as h
 import ckan.lib.formatters as formatters
 import ckan.model as model
+import json
 from ckanext.virtual_library import helpers
 from logging import getLogger
 from pylons.i18n import _
@@ -33,7 +34,8 @@ class VirtualLibrary(p.SingletonPlugin):
             'dataset_rating',
             'dataset_comment_count',
             'dataset_comments',
-            'get_license'
+            'get_license',
+            'get_site_url'
             ])
 
     def configure(self, config):
@@ -93,13 +95,13 @@ class VirtualLibrary(p.SingletonPlugin):
         if pkg_dict['type'] == u'doc':
             try:
                 if 'extras_source_organizations_ml' in pkg_dict:
-                    source_orgs = literal_eval(pkg_dict['extras_source_organizations_ml'])
+                    source_orgs = json.loads(pkg_dict['extras_source_organizations_ml'])
                     if 'en' in source_orgs:
                         pkg_dict['vocab_source_org_en'] = kw(source_orgs['en'])
                     if 'fr' in source_orgs:
                         pkg_dict['vocab_source_org_fr'] = kw(source_orgs['fr'])
                 if 'subject_ml' in pkg_dict:
-                    subject = literal_eval(pkg_dict['subject_ml'])
+                    subject = json.loads(pkg_dict['subject_ml'])
                     if 'en' in subject:
                         pkg_dict['vocab_subject_en'] = kw(subject['en'])
                     if 'fr' in subject:
@@ -128,10 +130,3 @@ class VirtualLibrary(p.SingletonPlugin):
 
     def organization_facets(self, facets_dict, organization_type, package_type):
         return facets_dict
-
-    def _format_tags(self, key_string):
-        tag_string = ""
-        key_list = [x.strip() for x in key_string.split(',')]
-        for y in key_list:
-            tag_string = tag_string + "{0},".format(y.replace(' ', '_'))
-        return tag_string.strip(',')

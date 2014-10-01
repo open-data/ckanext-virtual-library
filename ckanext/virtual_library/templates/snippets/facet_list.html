@@ -10,6 +10,7 @@
     {% if items %}
       <nav>
         <ul class="list-unstyled" style="margin-left: 7px;">
+          {% set alternative_url=h.get_site_url(h.lang()) %}
           {% for item in items %}
             {% set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
             {% set label = item.display_name %}
