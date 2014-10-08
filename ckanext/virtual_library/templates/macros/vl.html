@@ -13,3 +13,18 @@
       {%- endif -%}
     {%- endif -%}
 {%- endmacro -%}
+
+{%- macro other_lang_url(url_list) -%}
+  {%- if url_list != None and ',' in value -%}
+    {%- set urls = url_list.split(',') -%}
+    <ul>
+      {%- for u in urls -%}
+      <li><a href="{{ u }}">{{_('Other Language Edition')}}</a></li>
+      {%- endfor -%}
+    </ul>
+  {%- elif url_list != None -%}
+    <a href="{{ url_list }}">{{_('Other Language Edition')}}</a>
+  {%- else -%}
+    {{ '' }}
+  {%- endif -%}
+{%- endmacro -%}

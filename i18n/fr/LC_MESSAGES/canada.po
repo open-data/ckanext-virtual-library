@@ -601,5 +601,23 @@ msgid "Open Government Licence - Canada"
 msgstr "Licence du gouvernement ouvert - Canada"
 
 msgid "Other Language Edition"
-msgstr "Disponibilité dans d'autres langues"
+msgstr "Édition dans d'autres langues"
+
+msgid "Search Information"
+msgstr "Recherche d'information"
+
+msgid "GC Catalogue Number"
+msgstr "Numéro de catalogue du GC"
+
+msgid "Departmental Catalogue Number"
+msgstr "Numéro de catalogue du ministère "
+
+msgid "Weekly Checklist Number"
+msgstr "Numéro de la liste de contrôle hebdomadaire"
+
+msgid "Series Title"
+msgstr "Titre de la collection"
+
+msgid "Series Number"
+msgstr "Numéro de série"
 
