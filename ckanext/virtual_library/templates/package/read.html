@@ -16,10 +16,12 @@
 {% endblock %}
 
 {% block related_items %}
+{%- if c.pkg_dict.other_language_url -%}
 <div class="col-md-12">
   <h3 class="h4">{{ _('Related Items') }}</h3>
-  {{ _('Other Language Edition') }} : {{ c.pkg_dict.other_language_url }}
+  {{ vl.other_lang_url(c.pkg_dict.other_language_url) }}
 </div>
+{%- endif -%}
 {% endblock %}
 
 {% block package_comments %}
