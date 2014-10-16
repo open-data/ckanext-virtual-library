@@ -35,7 +35,8 @@ class VirtualLibrary(p.SingletonPlugin):
             'dataset_comment_count',
             'dataset_comments',
             'get_license',
-            'get_site_url'
+            'get_site_url',
+            'get_res_lang'
             ])
 
     def configure(self, config):

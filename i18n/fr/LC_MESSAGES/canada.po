@@ -621,3 +621,8 @@ msgstr "Titre de la collection"
 msgid "Series Number"
 msgstr "Numéro de série"
 
+msgid "English"
+msgstr "Anglais"
+
+msgid "French"
+msgstr "Français"

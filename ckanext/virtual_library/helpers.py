@@ -27,3 +27,12 @@ def get_license(license_id):
 def get_site_url(lang):
 
     return "{0}/{1}/doc".format(str(config.get(CKAN_SITE_URL_OPTION, SITE_URL_DEFAULT)), lang)
+
+def get_res_lang(lang_str, lang):
+    has_lang = False
+    langs = lang_str.split(',')
+    for l in langs:
+        if l == lang:
+            has_lang = True
+            break
+    return has_lang
