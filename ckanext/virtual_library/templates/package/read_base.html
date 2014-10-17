@@ -28,6 +28,13 @@
   </div>
   {%- endif -%}
 
+  {%- if c.pkg_dict.date_published -%}
+  <div class="panel-body">
+    <strong>{{ _('Date Published') }} : </strong>
+    {{ c.pkg_dict.date_published }}
+  </div>
+  {%- endif -%}
+
   {%- if c.pkg_dict.issn -%}
   <div class="panel-body">
     <strong>{{ _('ISSN') }} : </strong>

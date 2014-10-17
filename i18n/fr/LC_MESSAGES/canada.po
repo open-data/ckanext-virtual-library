@@ -626,3 +626,6 @@ msgstr "Anglais"
 
 msgid "French"
 msgstr "Français"
+
+msgid "Date Published"
+msgstr "Date de publication"
