@@ -24,4 +24,8 @@
   <div class="col-md-3"><em>{{ _('Organization') }}: </em></div>
   <div class="col-md-9">{{ vl.ml_text(package.source_organizations_ml, client_lang) }}</div>
 </div>
+<div class="row mrgn-tp-sm mrgn-bttm-sm">
+  <div class="col-md-3"><em>{{ _('Date Published') }}: </em></div>
+  <div class="col-md-9">{{ package.date_published[0:4] }}</div>
+</div>
 {% endblock %}

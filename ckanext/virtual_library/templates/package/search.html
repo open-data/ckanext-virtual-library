@@ -17,12 +17,12 @@
     <h2>{{ _('Search Filters') }}</h2>
    {% if dataset_type == 'doc' %}
      {% if h.lang() == 'fr' %}
-      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['vocab_source_org_fr'],
+      {{ h.snippet('snippets/facet_list.html', title='Organisation',
         name='vocab_source_org_fr') }}
       {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['vocab_subject_fr'],
         name='vocab_subject_fr') }}
      {% else %}
-      {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['vocab_source_org_en'],
+      {{ h.snippet('snippets/facet_list.html', title='Organization',
         name='vocab_source_org_en') }}
       {{ h.snippet('snippets/facet_list.html', title=c.facet_titles['vocab_subject_en'],
         name='vocab_subject_en') }}

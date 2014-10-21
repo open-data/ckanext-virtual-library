@@ -14,7 +14,7 @@
 {% block resource_item_language %}
   <td >
     {%- set has_french = True -%}
-    {%- if h.get_res_lang(res.languages, 'fre') or h.get_res_lang(res.languages, 'frs') -%}
+    {%- if h.get_res_lang(res.languages, 'fre') or h.get_res_lang(res.languages, 'fra') -%}
       {{ _('French') }}
     {%- endif -%}
     {%- if has_franch -%}, {%- endif -%}
