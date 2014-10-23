@@ -647,3 +647,9 @@ msgstr "http://data.gc.ca/fra/licence-du-gouvernement-ouvert-canada"
 
 msgid "Resource Formats"
 msgstr "Formats disponibles"
+
+msgid "Information Resources - Open Information"
+msgstr "Resources d'information - Informations Ouverte"
+
+msgid "{record_title} - Information Resources - Open Information"
+msgstr "{record_title} - Resources d'information - Informations Ouverte"
