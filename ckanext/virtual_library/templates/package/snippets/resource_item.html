@@ -17,7 +17,7 @@
     {%- if h.get_res_lang(res.languages, 'fre') or h.get_res_lang(res.languages, 'fra') -%}
       {{ _('French') }}
     {%- endif -%}
-    {%- if has_franch -%}, {%- endif -%}
+    {% if has_french %}, {% endif %}
     {%- if h.get_res_lang(res.languages, 'eng') -%}
       {{ _('English') }}
     {%- endif -%}
