@@ -575,27 +575,27 @@ msgid "Sorry no resources found for \"{query}\""
 msgstr "Désolé, aucun ressources trouvé pour \"{query}\""
 
 msgid "Rate this resource"
-msgstr "Coter ce ressource"
+msgstr "Coter cette ressource"
 
 msgid "No resources were found to match your query."
 msgstr "Aucun ressources trouvé pour votre requête."
 
 msgid "{number} resource found"
 msgid_plural "{number} resources found"
-msgstr[0] "{number} ressource trouvé"
-msgstr[1] "{number} ressources trouvés"
+msgstr[0] "{number} ressource trouvée"
+msgstr[1] "{number} ressources trouvées"
 
 msgid "{number} resources found"
-msgstr "{number} ressources trouvés"
+msgstr "{number} ressources trouvées"
 
 #: ckan/templates/snippets/search_result_text.html
 msgid "No resources found for \"{query}\""
-msgstr "Aucun ressources trouvé pour \"{query}\""
+msgstr "Aucun ressource trouvée pour \"{query}\""
 
 msgid "{number} resource found for \"{query}\""
 msgid_plural "{number} resources found for \"{query}\""
-msgstr[0] "{number} ressource trouvé pour \"{query}\""
-msgstr[1] "{number} ressources trouvés pour \"{query}\""
+msgstr[0] "{number} ressource trouvée pour \"{query}\""
+msgstr[1] "{number} ressources trouvées pour \"{query}\""
 
 msgid "Open Government Licence - Canada"
 msgstr "Licence du gouvernement ouvert - Canada"
@@ -629,3 +629,27 @@ msgstr "Français"
 
 msgid "Date Published"
 msgstr "Date de publication"
+
+msgid "Search Open Information"
+msgstr "Rechercher de l'information ouverte"
+
+msgid "Title A-Z"
+msgstr "Titre A-Z"
+
+msgid "Title Z-A"
+msgstr "Titre Z-A"
+
+msgid "Submit Comment"
+msgstr "Soumettre commentaires"
+
+msgid "http://data.gc.ca/eng/open-government-licence-canada"
+msgstr "http://data.gc.ca/fra/licence-du-gouvernement-ouvert-canada"
+
+msgid "Resource Formats"
+msgstr "Formats disponibles"
+
+msgid "Information Resources - Open Information"
+msgstr "Resources d'information - Informations Ouverte"
+
+msgid "{record_title} - Information Resources - Open Information"
+msgstr "{record_title} - Resources d'information - Informations Ouverte"

@@ -24,6 +24,10 @@
 {%- endif -%}
 {% endblock %}
 
+{% set info_title = c.pkg_dict.title or c.pkg_dict.name %}
+{% set page_title  = _('{record_title} - Information Resources - Open Information') %}
+{% block title %}{{ page_title.format(record_title=info_title) }}{% endblock %}
+
 {% block package_comments %}
 {% include "package/comments.html" %}
 {% endblock %}
