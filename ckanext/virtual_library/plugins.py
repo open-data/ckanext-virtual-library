@@ -88,11 +88,29 @@ class VirtualLibrary(p.SingletonPlugin):
              the indexer. The extension can modify this by returning an
              altered version.
         '''
+
         def kw(value):
             s = value.strip()
             if not s:
                 return []
             return [k.strip() for k in s.split(',')]
+
+        def le(langs):
+            facets = []
+            if 'eng' in langs:
+                facets.append('English')
+            if 'fra' in langs:
+                facets.append('French')
+            return facets
+
+        def lf(langs):
+            facets = []
+            if 'eng' in langs:
+                facets.append('Anglais')
+            if 'fra' in langs:
+                facets.append(u'Fran\xe7ais')
+            return facets
+
         if pkg_dict['type'] == u'doc':
             try:
                 if 'extras_source_organizations_ml' in pkg_dict:
@@ -107,6 +125,20 @@ class VirtualLibrary(p.SingletonPlugin):
                         pkg_dict['vocab_subject_en'] = kw(subject['en'])
                     if 'fr' in subject:
                         pkg_dict['vocab_subject_fr'] = kw(subject['fr'])
+                langs = []
+                if 'data_dict' in pkg_dict:
+                    data_dict = json.loads(pkg_dict['data_dict'])
+                    if 'resources' in data_dict:
+                        for r in data_dict['resources']:
+                            if 'languages' in r:
+                                rlangs = r['languages'].split(',')
+                                for l in rlangs:
+                                    if not l in langs:
+                                        langs.append(l)
+                pkg_dict['vocab_languages_en'] = le(langs)
+                pkg_dict['vocab_languages_fr'] = lf(langs)
+
+
             except ValueError as v:
                 log = getLogger('ckanext')
                 log.error(v.message)
@@ -124,6 +156,8 @@ class VirtualLibrary(p.SingletonPlugin):
             facets_dict['vocab_subject_en'] = _('Subject')
             facets_dict['vocab_source_org_fr'] = _('Publisher')
             facets_dict['vocab_subject_fr'] = _('Subject')
+            facets_dict['vocab_languages_en'] = _('Language')
+            facets_dict['vocab_languages_fr'] = _('Language')
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
