@@ -649,7 +649,10 @@ msgid "Resource Formats"
 msgstr "Formats disponibles"
 
 msgid "Information Resources - Open Information"
-msgstr "Resources d'information - Informations Ouverte"
+msgstr "Ressources d'information - Informations Ouverte"
 
 msgid "{record_title} - Information Resources - Open Information"
-msgstr "{record_title} - Resources d'information - Informations Ouverte"
+msgstr "{record_title} - Ressources d'information - Informations Ouverte"
+
+msgid "Information Resources"
+msgstr "Ressources de l'information"
