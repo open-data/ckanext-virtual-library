@@ -1,9 +1,46 @@
 {% ckan_extends %}
 
 {% block search_input_label %}
+<div class="row mrgn-bttm-md mrgn-rght-sm">
+  <div class="col-md-12 well">
+  {% if h.lang() == 'en' %}
+    <p>Our goal is to provide access to all information collections throughout the Government of Canada.
+      To accomplish this, we are applying a ‘phased’ approach to integrate the different technical systems
+      currently in use across the Government of Canada. This release of the ‘Open Information portal’
+      is the first of multiple phases, and consists of a consolidation of the electronic publications
+      provided by <a href="http://publications.gc.ca">Publications.gc.ca</a> and
+      <a href="http://CollectionsCanada.gc.ca">CollectionsCanada.gc.ca</a></p>.
+    <p>Subsequent phases will expand on this collection and improve search and discovery functionality.
+      If you have any suggestions on what we can do to improve the collection, let us know by using
+      our <a href="http://data.gc.ca/eng/forms/contact-us">‘Contact Us’</a> form. Also, use our
+      <a href="http://dev3.data.gc.ca/eng/forms/suggest-open-information">‘Suggest Open Information’</a>
+      form to let us know what you would like to see added to this collection.</p>
+  {% else %}
+    <p>Notre but est de rendre accessibles toutes les collections d’information de l’ensemble
+      du gouvernement du Canada. À cette fin, nous avons adopté une approche graduelle pour intégrer
+      les différents systèmes techniques actuellement utilisés au gouvernement du Canada.
+      Le « portail de l’information ouverte », qui est la première étape de multiples phases,
+      représente une consolidation des publications électroniques accessibles à partir de
+      <a href="http://publications.gc.ca">Publications.gc.ca</a> et
+      <a href="http://CollectionsCanada.gc.ca">CollectionsCanada.gc.ca</a>.</p>
+    <p>Lors de phases subséquentes, la collection sera élargie et les fonctions de navigation
+      et de recherche seront améliorées. Si vous avez des suggestions à faire qui permettraient
+      d’améliorer la collection, veuillez remplir le formulaire de la section
+      <a href="http://donnees.gc.ca/fra/formulaire/faites-nous-part-de-vos-commentaires">Contactez-nous</a>.
+      Vous pouvez aussi remplir le formulaire <a href="http://dev3.data.gc.ca/fr/forms/suggest-open-information">
+      Suggérer un ajout</a> pour nous faire part de l’information
+      que vous aimeriez voir dans cette collection.</p>
+  {% endif %}
+  </div>
+</div>
 <div class="row mrgn-bttm-md">
   <div class="col-md-12">
   <label for="search_field" >{{ _('Search Open Information') }}</label>
+  {% if h.lang() == 'en' %}
+    <a href="/en/suggest-open-information" class="btn btn-success btn-sm pull-right">Suggest Open Information</a>
+  {% else %}
+    <a href="/fr/jeux-de-donnees-suggeres" class="btn btn-success btn-sm pull-right">Proposer de l'information ouverte</a>
+  {% endif %}
   </div>
 </div>
 {% endblock %}
