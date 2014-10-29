@@ -93,8 +93,10 @@
   {% set pkg_url = h.url(controller='package', action='read', id=pkg.id) %}
   {%- if client_lang == 'fr' -%}
     <li><a href="{% url_for '/doc', locale='fr' %}?q=">{{ _('Search Open Information') }}</a></li>
+    <li>{{ dataset }}</li>
   {%- else -%}
     <li><a href="{% url_for '/doc', locale='en' %}?q=">{{ _('Search Open Information') }}</a></li>
+    <li>{{ dataset }}</li>
   {%- endif -%}
 
   {#<li>{% link_for _('Search Data'), controller='package', action='search', highlight_actions = 'new index' %}</li>#}
