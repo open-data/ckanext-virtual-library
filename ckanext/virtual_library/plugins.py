@@ -12,8 +12,7 @@ from wcms import wcms_configure
 
 class VirtualLibrary(p.SingletonPlugin):
     """
-    Plugin for public-facing version of data.gc.ca site, aka the "portal"
-    This plugin requires the DataGCCAForms plugin
+    Plugin for the Open Information (virtual library) on open.canada.ca
     """
     p.implements(p.IConfigurer)
     p.implements(p.ITemplateHelpers)
