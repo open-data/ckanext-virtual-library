@@ -3,7 +3,7 @@
 {% set current_url = request.environ.CKAN_CURRENT_URL %}
 
 {% block site_title %}
-<a href="{% if h.lang() == 'en' %}/eng{% else %}/fra{% endif %}">{{ _('data.gc.ca') }}</a>
+<a href="{% if h.lang() == 'en' %}/en{% else %}/fr{% endif %}">{{ _('open.canada.ca') }}</a>
 {% endblock %}
 
 {% block wet_banner %}
@@ -91,7 +91,7 @@
 {% block wet_search_box %}
 <div id="wb-sttl" class="col-md-5">
   <a href="{% url_for controller='home', action='index' %}">
-  <span>{{ _('data.gc.ca') }}</span>
+  <span>{{ _('open.canada.ca') }}</span>
   </a>
 </div>
 <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="{{ wet_server }}/assets/wmms.svg"

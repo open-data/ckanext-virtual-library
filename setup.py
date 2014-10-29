@@ -13,7 +13,7 @@ setup(
     keywords='',
     author='http://github.com/thriuin',
     author_email='ross.thompson@statcan.gc.ca',
-    url='http://data.gc.ca',
+    url='http://open.canada.ca',
     license='MIT',
     packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
     namespace_packages=['ckanext', 'ckanext.virtual_library'],
