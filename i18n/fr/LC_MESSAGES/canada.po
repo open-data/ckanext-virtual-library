@@ -659,3 +659,6 @@ msgstr "Ressources de l'information"
 
 msgid "open.canada.ca"
 msgstr "ouvert.canada.ca"
+
+msgid "Open Information Portal"
+msgstr "Portail des informations ouvertes"
