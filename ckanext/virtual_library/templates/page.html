@@ -3,7 +3,7 @@
 {% set current_url = request.environ.CKAN_CURRENT_URL %}
 
 {% block site_title %}
-<a href="{% if h.lang() == 'en' %}/eng{% else %}/fra{% endif %}">{{ _('data.gc.ca') }}</a>
+<a href="{% if h.lang() == 'en' %}/en{% else %}/fr{% endif %}">{{ _('open.canada.ca') }}</a>
 {% endblock %}
 
 {% block wet_banner %}
@@ -11,26 +11,39 @@
 {% block wet_banner_bar %}
 
   <section class="visible-md visible-lg text-right" id="wb-lng">
-    <h2 class="wb-inv">Language selection</h2>
-
+  {% if h.lang() == 'fr' %}
+    <h2 class="wb-inv">Sélection de la langue</h2>
     <div class="row">
       <div class="col-md-12">
         <ul class="list-inline margin-bottom-none">
-          {% if h.lang() == 'en' %}
-          <li><a lang="fr" href="{% url_for current_url, locale='fr' %}">Français</a></li>
-          {% else %}
           <li><a lang="en" href="{% url_for current_url, locale='en' %}">English</a></li>
-          {% endif %}
         </ul>
       </div>
     </div>
+  {% else %}
+    <h2 class="wb-inv">Language selection</h2>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-inline margin-bottom-none">
+          <li><a lang="fr" href="{% url_for current_url, locale='fr' %}">Français</a></li>
+        </ul>
+      </div>
+    </div>
+  {% endif %}
   </section>
 <div class="row">
   <div class="brand col-xs-8 col-sm-9 col-md-6">
+    {% if h.lang() == 'fr' %}
+    <a href="http://www.canada.ca/fr/index.html">
+      <object type="image/svg+xml" tabindex="-1" role="img" data="{{ wet_server }}/assets/sig-blk-fr.svg"
+              aria-label="Gouvernement du Canada"></object>
+    </a>
+    {% else %}
     <a href="http://www.canada.ca/en/index.html">
       <object type="image/svg+xml" tabindex="-1" role="img" data="{{ wet_server }}/assets/sig-blk-en.svg"
               aria-label="Government of Canada"></object>
     </a>
+    {% endif %}
   </div>
   <section class="wb-mb-links col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
     <h2>Search and menus</h2>
@@ -91,7 +104,7 @@
 {% block wet_search_box %}
 <div id="wb-sttl" class="col-md-5">
   <a href="{% url_for controller='home', action='index' %}">
-  <span>{{ _('data.gc.ca') }}</span>
+  <span>{{ _('open.canada.ca') }}</span>
   </a>
 </div>
 <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="{{ wet_server }}/assets/wmms.svg"
