@@ -1,34 +1,33 @@
 {% ckan_extends %}
 
 {% block search_input_label %}
-<div class="row mrgn-bttm-md mrgn-rght-sm">
+<div class="row mrgn-bttm-sm mrgn-rght-sm">
   <h1>{{ _('Open Information Portal') }}</h1>
   <div class="col-md-12">
     <section class="alert alert-info" >
     {% if h.lang() == 'en' %}
         <p>Our goal is to provide access to all information collections throughout the Government of Canada.
-        To accomplish this, we are applying a ‘phased’ approach to integrate the different technical systems
-        currently in use across the Government of Canada. This release of the ‘Open Information portal’
-        is the first of multiple phases, and consists of a consolidation of the electronic publications
-        provided by <a href="http://publications.gc.ca" class="alert-link">Publications.gc.ca</a> and
-        <a href="http://CollectionsCanada.gc.ca" class="alert-link">CollectionsCanada.gc.ca</a>.</p>
-      <details id="alert-success-en"">
-       <summary>&nbsp;</summary>
+          To accomplish this, we are applying a ‘phased’ approach to integrate the different technical systems
+          currently in use across the Government of Canada. This release of the ‘Open Information portal’ is
+          the first of multiple phases, and consists of a consolidation of the electronic publications
+          provided by <a href="http://publications.gc.ca" class="alert-link">Government of Canada Publications</a>
+          and <a href="http://www.bac-lac.gc.ca" class="alert-link">Library and Archives Canada</a>.</p>
+      <details id="alert-success-en" class="mrgn-tp-md">
+       <summary class="mrgn-bttm-sm">Read More</summary>
        <p>Subsequent phases will expand on this collection and improve search and discovery functionality.
         If you have any suggestions on what we can do to improve the collection, let us know by using
         our <a href="http://open.canada.ca/en/forms/contact-us" class="alert-link">‘Contact Us’</a> form. Also, use our
         <a href="http://open.canada.ca/en/forms/suggest-open-information" class="alert-link">‘Suggest Open Information’</a>
         form to let us know what you would like to see added to this collection.</p>
       {% else %}
-      <p>Notre but est de rendre accessibles toutes les collections d’information de l’ensemble
-        du gouvernement du Canada. À cette fin, nous avons adopté une approche graduelle pour intégrer
-        les différents systèmes techniques actuellement utilisés au gouvernement du Canada.
-        Le « portail de l’information ouverte », qui est la première étape de multiples phases,
-        représente une consolidation des publications électroniques accessibles à partir de
-        <a href="http://publications.gc.ca" class="alert-link">Publications.gc.ca</a> et
-        <a href="http://CollectionsCanada.gc.ca" class="alert-link">CollectionsCanada.gc.ca</a>.</p>
-      <details id="alert-success-fr">
-       <summary>&nbsp;</summary>
+      <p>Notre but est de rendre accessibles toutes les collections d’information de l’ensemble du gouvernement du Canada.
+        À cette fin, nous avons adopté une approche graduelle pour intégrer les différents systèmes techniques
+        actuellement utilisés au gouvernement du Canada. Le « portail de l’information ouverte », qui est
+        la première étape de multiples phases, représente une consolidation des publications électroniques accessibles
+        à partir des <a href="http://publications.gc.ca" class="alert-link">Publications du gouvernement</a> et
+        <a href="http://www.bac-lac.gc.ca" class="alert-link">Bibliothèque et Archives Canada</a>.</p>
+      <details id="alert-success-fr" class="mrgn-tp-md">
+       <summary class="mrgn-bttm-sm">Plus</summary>
       <p>Lors de phases subséquentes, la collection sera élargie et les fonctions de navigation
         et de recherche seront améliorées. Si vous avez des suggestions à faire qui permettraient
         d’améliorer la collection, veuillez remplir le formulaire de la section
