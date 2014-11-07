@@ -26,7 +26,7 @@
 
 {% block resource_item_description %}
 <td >
-  <a href="{{ res.url }}" title="{{ res.name or res.description or _('Resource') }}">
+  <a href="{{ res.url }}" title="{{ res.name or res.description or _('Resource') }}"  class="resource-url-analytics">
     <span class="badge">{{ _('Download') }}</span>
   </a>
 </td>
