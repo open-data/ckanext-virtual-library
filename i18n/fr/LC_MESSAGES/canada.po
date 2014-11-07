@@ -661,4 +661,4 @@ msgid "open.canada.ca"
 msgstr "ouvert.canada.ca"
 
 msgid "Open Information Portal"
-msgstr "Portail des informations ouvertes"
+msgstr "Portail d’information ouverte"

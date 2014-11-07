@@ -36,3 +36,6 @@ def get_res_lang(lang_str, lang):
             has_lang = True
             break
     return has_lang
+
+def googleanalytics_id():
+    return str(config.get('googleanalytics.id'))
