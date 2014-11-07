@@ -35,7 +35,8 @@ class VirtualLibrary(p.SingletonPlugin):
             'dataset_comments',
             'get_license',
             'get_site_url',
-            'get_res_lang'
+            'get_res_lang',
+            'googleanalytics_id'
             ])
 
     def configure(self, config):
