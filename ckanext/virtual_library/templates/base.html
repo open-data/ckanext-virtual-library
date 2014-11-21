@@ -13,10 +13,10 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-
 {% endblock %}
 
 {% block wet_scripts %}
+  <script>
   // Add Google Analytics Event Tracking to resource download links.
   jQuery('a.resource-url-analytics').on('click', function() {
   var resource_url = encodeURIComponent(jQuery(this).prop('href'));
@@ -24,4 +24,5 @@
   _gaq.push(['_trackEvent', 'Resource', 'Download', resource_url]);
   }
   });
+  </script>
 {% endblock %}
