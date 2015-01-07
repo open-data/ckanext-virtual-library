@@ -662,3 +662,15 @@ msgstr "ouvert.canada.ca"
 
 msgid "Open Information Portal"
 msgstr "Portail d’information ouverte"
+
+msgid "Topics menu"
+msgstr "Menu des sujets"
+
+msgid "Search and menus"
+msgstr "Recherche et menus"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "French"
+msgstr "Français"

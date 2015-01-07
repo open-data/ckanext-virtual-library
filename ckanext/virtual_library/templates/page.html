@@ -46,7 +46,7 @@
     {% endif %}
   </div>
   <section class="wb-mb-links col-xs-4 col-sm-3 visible-sm visible-xs" id="wb-glb-mn">
-    <h2>Search and menus</h2>
+    <h2>{{ _('Search and menus') }}</h2>
     <ul class="list-inline text-right chvrn">
       <li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk" role="button"><span
           class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a>
@@ -61,8 +61,8 @@
 {% block wet_megamenu %}
 <nav role="navigation" id="wb-sm" data-ajax-fetch="{% url_for '/snippets/menu.html' %}" data-trgt="mb-pnl"
      class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
+  <h2 class="wb-inv">{{ _('Topics menu') }}</h2>
 {% if h.lang() == 'fr' %}
-  <h2 class="wb-inv">Menu des sujets</h2>
   <div class="container visible-md visible-lg nvbar">
     <div class="row">
       <ul class="list-inline menu">
@@ -78,7 +78,6 @@
     </div>
   </div>
 {% else %}
-  <h2 class="wb-inv">Topics menu</h2>
   <div class="container visible-md visible-lg nvbar">
     <div class="row">
       <ul class="list-inline menu">
