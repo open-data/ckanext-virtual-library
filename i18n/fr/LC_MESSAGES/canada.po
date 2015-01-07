@@ -668,9 +668,3 @@ msgstr "Menu des sujets"
 
 msgid "Search and menus"
 msgstr "Recherche et menus"
-
-msgid "English"
-msgstr "Anglais"
-
-msgid "French"
-msgstr "Français"
